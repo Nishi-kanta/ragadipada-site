@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-50: #fdf8f6;
+  --color-primary-100: #f2e8e5;
+  --color-primary-200: #eaddd7;
+  --color-primary-300: #e0cec7;
+  --color-primary-400: #d2bab0;
+  --color-primary-500: #bfa094;
+  --color-primary-600: #a18072;
+  --color-primary-700: #977669;
+  --color-primary-800: #846358;
+  --color-primary-900: #43302b;
+
+  --color-nature-deep: #1a2e1a;
+  --color-nature-accent: #4a6741;
+  
+  --color-saffron: #f4c430;
+  --color-clay: #b66a50;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfdfc;
+  --foreground: #2d2a2a;
+  --card: #ffffff;
+  --card-foreground: #2d2a2a;
+  --primary: #5d4037;
+  --primary-foreground: #fafaf9;
+  --secondary: #4a6741;
+  --secondary-foreground: #fafaf9;
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+  --accent: #f4c430;
+  --accent-foreground: #2d2a2a;
+  --border: #e7e5e4;
+  --radius: 0.75rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #1c1917;
+  --foreground: #fafaf9;
+  --card: #292524;
+  --card-foreground: #fafaf9;
+  --primary: #d6d3d1;
+  --primary-foreground: #1c1917;
+  --secondary: #4a6741;
+  --secondary-foreground: #fafaf9;
+  --muted: #292524;
+  --muted-foreground: #a8a29e;
+  --accent: #f4c430;
+  --accent-foreground: #1c1917;
+  --border: #44403c;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .glass-nav {
+    @apply sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 backdrop-blur-md;
+  }
+  
+  .premium-card {
+    @apply overflow-hidden rounded-2xl border border-stone-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
 }
