@@ -7,7 +7,7 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-//demos
+//demo
 export const metadata: Metadata = {
   title: "Ragadipada Village Portal | Cuttack, Odisha",
   description: "Explore Ragadipada village - its history, culture, temples, ponds, and administrative information. Located in Badamba Tehsil, Cuttack district.",
